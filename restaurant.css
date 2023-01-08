@@ -1,0 +1,218 @@
+:root{
+    --background_color: rgb(22, 21, 21);
+    --navbar_color: rgb(120, 45, 65);
+    --display_background: rgb(61, 53, 61);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--background_color);
+}
+
+#navbar{
+    width: 100%;
+    height: 50px;
+    display: grid;
+    position: fixed;
+    background-color: var(--navbar_color);
+    color: white;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 0;
+    z-index: 10;
+}
+
+.logo{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 40px;
+}
+
+.logo img{
+    height: inherit;
+}
+
+.navigation_options{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+.navigation_options *{
+    font-style: italic;
+    color: aliceblue;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+}
+
+.option{
+    width: 100%;
+    height: 100%;
+    transition: 1s ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.option:hover{
+    background-color: gray;
+    width: 100%;
+}
+
+.Background{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
+
+.Background span{
+    z-index: 1;
+    color: aliceblue;
+    font-size: 10vw;
+    font-style: oblique;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.back-video{
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+}
+
+.order_button{
+    height: 10vh;
+    width: 15vw;
+    font-size: 3vh;
+    border: 1px solid white;
+    border-radius: 10vw;
+    color: white;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.order_wrapper{
+    max-width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 1vw;
+    padding: 2vw;
+}
+
+.menu_item{
+    color: aliceblue;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    flex-wrap: wrap;
+    padding: 1vw;
+    gap: 1vh;
+    border: 1px solid white;
+    border-radius: 1vw;
+    box-shadow: 0 0 20px rgba(45, 45, 50, 0.5);
+    grid-column: 1 / span 3;
+}
+.menu_item h2{
+    width: 100%;
+}
+.menu_item p{
+    width: 90%;
+}
+.menu_item span{
+    width: 9%;
+}
+
+.order_display{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 5fr 1fr 1fr 2fr;
+    border-radius: 2vw;
+    background-color: var(--display_background);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    grid-area: 1 / 4 / span 6 / span 2;
+}
+.order_display *{
+    font-size: large;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 5%;
+}
+.order_tittle{
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+}
+
+.text{
+    color: black;
+}
+
+.aditional_notes{
+    padding: 2%;
+}
+
+#locations_list{
+    display: none;
+}
+
+
+.order_items{
+    max-height: 45vh;
+    font-size: larger;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    align-items: center;
+    padding: 5% 5%;
+    overflow: auto;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+    overflow-y: scroll; 
+}
+.order_items::-webkit-scrollbar{
+    display: none;
+}
+.order_item{
+    width: 100%;
+    min-height: 50px;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    border-radius: 1vw;
+    background-image: linear-gradient(rgb(51, 51, 51), rgb(74, 73, 73));
+}
+
+.order_item > *{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    align-content: center;
+}
+.total{
+    justify-content: space-between;
+}

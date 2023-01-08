@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="restaurant.css">
+    <title>Burger Restaurant</title>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="logo">
+            <img src="media/burger_logo.png" alt="">
+        </div>
+        <div class="navigation_options">
+            <a href="#"><div class="option">Order</div></a>
+            <a href="#"><div class="option">Menu</div></a>
+            <a href="#"><div class="option">Locations</div></a>
+            <a href="#"><div class="option">About Us</div></a>
+        </div>
+        
+    </nav>
+     <div class="Background">
+        <video autoplay loop muted plays-inline class="back-video">
+            <source src="media/burger restaurant video.mp4" type="video/mp4">
+        </video>
+        <span>BIG BURGER</span>
+        <button type="submit" class="order_button">ORDER NOW</button>
+     </div>
+    <div class="order_wrapper">
+            <div class="menu_item classic_burger">
+                <h2 class="item_name">Classic Burger</h2>
+                <p class="item_description">Classic beef burger with lettuce, tomato, onion, and pickles on a toasted bun</p>
+                <span>9,97/$</span>
+            </div>
+            <div class="menu_item veggie_burger">
+                <h2 class="item_name">Veggie Burger</h2>
+                <p class="item_description">Plant-based burger patty with lettuce, tomato, onion, pickles on a toasted bun</p>
+                <span>7,59/$</span>
+            </div>
+            <div class="menu_item chicken_sandwich">
+                <h2 class="item_name">Chicken Sandwich</h2>
+                <p class="item_description">Preaded chicken breast with lettuce, tomato, and mayonnaise on a toasted bun</p>
+                <span>10,59/$</span>
+            </div>
+            <div class="menu_item bbq_burger">
+                <h2 class="item_name">BBQ Burger</h2>
+                <p class="item_description">Beef burger topped with BBQ sauce, onion rings, and cheddar cheese on a toasted bun</p>
+                <span>10,59/$</span>
+            </div>
+            <div class="menu_item fries">
+                <h2 class="item_name">Fries</h2>
+                <p class="item_description">Golden and crispy on the outside, with a soft and fluffy interior. They are made with high quality</p>
+                <span>1,99/$</span>
+            </div>
+            <div class="menu_item milkshake">
+                <h2 class="item_name">Milkshake</h2>
+                <p class="item_description">Made with real ice cream and your choice of flavor: chocolate, vanilla, and strawberry</p>
+                <span>2,59/$</span>
+            </div>
+
+        <div class="order_display">
+            <div class="order_tittle">YOUR ORDER</div>
+            <div class="order_location">
+                <label>Restaurant Location: 
+                    <input list="locations" name="our_locations" class="text"/>
+                </label>
+                <datalist id="locations_list">
+                    <option value="California">
+                    <option value="New York">
+                    <option value="Florida">
+                  </datalist>
+            </div>
+            <div class="client_direction">
+                <label> Your Location: 
+                    <input type="text" class="text">
+                </label>
+            </div>
+            <div class="order_items"></div>
+            <div class="total ">
+                TOTAL:  
+                <div class="total_price"></div>
+            </div>
+            <div class="aditional_notes_tittle">Aditional notes</div>
+            <textarea class="text aditional_notes" cols="30" rows="5" placeholder="You need to tell us something?"></textarea>
+        </div>
+    </div>
+<script src="restaurant.js"></script>
+</body>
+</html>
