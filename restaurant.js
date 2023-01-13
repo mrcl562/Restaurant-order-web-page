@@ -14,27 +14,43 @@ const menu_keys ={
 menu_item.forEach(item => {
     item.addEventListener("click",(ev) =>{ 
         if(ev.target.parentElement.classList.contains("menu_item")){
-            item_quantitys(ev.target.parentElement.classList);
+            item_quantitys(ev.target.parentElement.classList.value.split(" ").pop(0,1));
         }
     })
 })
 
-const add_order_item = (quantity, name, price) =>{
+
+const item_quantitys = (click_item) => {
+  const menuMap = {
+    "classic_burger": "burger",
+    "veggie_burger": "veggie",
+    "bbq_burger": "bbq",
+    "chicken_sandwich": "chicken",
+    "fries": "fries",
+    "milkshake": "milkshake"
+  };
+  const menuKey = menuMap[click_item];
+  if (menuKey) {
+    menu_keys[menuKey][2]++;
+    if(menu_keys[menuKey][2] == 1){
+      add_order_item(menu_keys[menuKey] , `${menuKey}_quantity`, `${menuKey}_price`)
+    }else{
+      document.querySelector(`.${menuKey}_quantity`).innerText = menu_keys[menuKey][2];
+      document.querySelector(`.${menuKey}_price`).innerText = menu_keys[menuKey][0] * menu_keys[menuKey][2];
+    }
+  } else {
+    return false;
+  }
+}
+
+const add_order_item = (item, unique_class, unique_price) =>{
     order_items
             .appendChild(Object.assign(document.createElement("div"), {classList: "order_item"}))
             .append(
-                Object.assign(document.createElement("div"), {classList: "item_quantity", innerText: quantity}),
-                Object.assign(document.createElement("div"), {classList: "item_name", innerText: name}),
-                Object.assign(document.createElement("div"), {classList: "item_price", innerText: price})
-            )
+                Object.assign(document.createElement("div"), {classList: `item_quantity ${unique_class}`, innerText: item[2]}),
+                Object.assign(document.createElement("div"), {classList: "item_name", innerText: item[1]}),
+                Object.assign(document.createElement("div"), {classList: `item_price ${unique_price}`, innerText: item[0]})
+            )              
 }
 
-const item_quantitys = (click_item) => {
-    click_item.contains("classic_burger") 
-        ? menu_keys.burger[2]++ : click_item.contains("veggie_burger") 
-            ? menu_keys.veggie[2]++ : click_item.contains("bbq_burger") 
-                ? menu_keys.bbq[2]++ :click_item.contains("chicken_sandwich") 
-                    ? menu_keys.chicken[2]++ :click_item.contains("fries") 
-                        ? menu_keys.fries[2]++ :click_item.contains("milkshake") 
-                            ? menu_keys.milkshake[2]++ : false;
-}
+
