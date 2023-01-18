@@ -17,9 +17,9 @@
             <a href="#"><div class="option">Menu</div></a>
             <a href="#"><div class="option">Locations</div></a>
             <a href="#"><div class="option">About Us</div></a>
-        </div>
-        
+        </div> 
     </nav>
+
      <div class="Background">
         <video autoplay loop muted plays-inline class="back-video">
             <source src="media/burger restaurant video.mp4" type="video/mp4">
@@ -63,13 +63,13 @@
             <div class="order_tittle">YOUR ORDER</div>
             <div class="order_location">
                 <label>Restaurant Location: 
-                    <input list="locations" name="our_locations" class="text"/>
+                    <input list="locations_list" name="our_locations" class="text"/>
                 </label>
                 <datalist id="locations_list">
                     <option value="California">
                     <option value="New York">
                     <option value="Florida">
-                  </datalist>
+                </datalist>
             </div>
             <div class="client_direction">
                 <label> Your Location: 
@@ -79,10 +79,41 @@
             <div class="order_items"></div>
             <div class="total ">
                 TOTAL:  
-                <div class="total_price"></div>
+                <div class="total_price">0 <p>$</p></div>
             </div>
             <div class="aditional_notes_tittle">Aditional notes</div>
             <textarea class="text aditional_notes" cols="30" rows="5" placeholder="You need to tell us something?"></textarea>
+        </div>
+    </div>
+    <div class="locations_wrapper">
+        <div class="locations_tittle">
+            <h2> OUR LOCATIONS</h2>
+        </div>
+        <div class="locations_display">
+            <div class="location lc_california">
+                <div class="location_image">
+                    <img src="media/297870_pV5FIf9cqeDJNjXrZb6pOGfQNk7EsDHnkAFfxYVz5WQ.jpg" >
+                </div>
+                <div class="location_description">
+                    <p>California</p>
+                </div>
+            </div>
+            <div class="location lc_florida">
+                <div class="location_image">
+                    <img src="media/Fathers_Office_square.jpg" >
+                </div>
+                <div class="location_description">
+                    <p>Florida</p>
+                </div>
+            </div>
+            <div class="location lc_newyork">
+                <div class="location_image">
+                    <img src="media/photo1jpg.jpg" >
+                </div>
+                <div class="location_description">
+                    <p>New York</p>
+                </div>
+            </div>
         </div>
     </div>
 <script src="restaurant.js"></script>
