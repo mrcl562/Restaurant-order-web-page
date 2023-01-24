@@ -13,21 +13,21 @@
             <img src="media/burger_logo.png" alt="">
         </div>
         <div class="navigation_options">
-            <a href="#"><div class="option">Order</div></a>
-            <a href="#"><div class="option">Menu</div></a>
-            <a href="#"><div class="option">Locations</div></a>
-            <a href="#"><div class="option">About Us</div></a>
+            <a href="#background"><div class="option">Order</div></a>
+            <a href="#order_wrapper"><div class="option">Menu</div></a>
+            <a href="#locations_wrapper"><div class="option">Locations</div></a>
+            <a href="#about_us_wrapper"><div class="option">About Us</div></a>
         </div> 
     </nav>
 
-     <div class="Background">
+    <section class="background" id="background">
         <video autoplay loop muted plays-inline class="back-video">
             <source src="media/burger restaurant video.mp4" type="video/mp4">
         </video>
         <span>BIG BURGER</span>
-        <button type="submit" class="order_button">ORDER NOW</button>
-     </div>
-    <div class="order_wrapper">
+        <a href="#order_wrapper" class="order_button">ORDER NOW</a>
+    </section>
+    <section class="order_wrapper" id="order_wrapper">
             <div class="menu_item classic_burger">
                 <h2 class="item_name">Classic Burger</h2>
                 <p class="item_description">Classic beef burger with lettuce, tomato, onion, and pickles on a toasted bun</p>
@@ -59,22 +59,20 @@
                 <span>2,59/$</span>
             </div>
 
-        <div class="order_display">
+        <form class="order_display">
             <div class="order_tittle">YOUR ORDER</div>
-            <div class="order_location">
-                <label>Restaurant Location: 
-                    <input list="locations_list" name="our_locations" class="text"/>
-                </label>
+            <div class="location_list order_location">
+                Restaurant Location:
+                <input list="locations_list" name="our_locations" class="text"/>
                 <datalist id="locations_list">
                     <option value="California">
                     <option value="New York">
                     <option value="Florida">
                 </datalist>
             </div>
-            <div class="client_direction">
-                <label> Your Location: 
-                    <input type="text" class="text">
-                </label>
+            <div class="location_list client_direction">
+                 Your Location:
+                <input type="text" class="text">
             </div>
             <div class="order_items"></div>
             <div class="total ">
@@ -83,11 +81,12 @@
             </div>
             <div class="aditional_notes_tittle">Aditional notes</div>
             <textarea class="text aditional_notes" cols="30" rows="5" placeholder="You need to tell us something?"></textarea>
-        </div>
-    </div>
-    <div class="locations_wrapper">
+            <button type="submit" class="submit_order">Submit Order</button>
+        </form>
+    </section>
+    <section class="locations_wrapper" id="locations_wrapper">
         <div class="locations_tittle">
-            <h2> OUR LOCATIONS</h2>
+            <h2> Our Locations</h2>
         </div>
         <div class="locations_display">
             <div class="location lc_california">
@@ -115,7 +114,41 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <section class="about_us_wrapper" id="about_us_wrapper">
+        <h2>ABOUT US</h2>
+        <p>
+            Welcome to Super Burger! We are a family-owned and operated burger restaurant
+            that serves fresh, high-quality burgers, made-to-order in a fun and casual 
+            atmosphere. Our menu also includes hand-cut fries, onion rings, milkshakes, 
+            and salads. We're committed to sustainability, sourcing ingredients locally 
+            and recycling/composting our waste. We look forward to serving you soon!
+        </p>
+    </section>
+    <footer class="footer_wrapper">
+        <div class="footer_container">
+            <div class="footer_column footer_one">
+                <h4>Contact Us</h4>
+                <p>123 Burger Ave<br>
+                Burger, USA 12345</p>
+                <p>555-555-5555</p>
+                <p>info@burger.com</p>
+            </div>
+            <div class="footer_column footer_two">
+                <h4>Hours of Operation</h4>
+                <p>Monday-Thursday: 11am-10pm</p>
+                <p>Friday-Saturday: 11am-11pm</p>
+                <p>Sunday: 12pm-9pm</p>
+            </div>
+            <div class="footer_column footer_three">
+                <h4>Follow Us</h4>
+                <a href="#">Facebook</a><br>
+                <a href="#">Twitter</a><br>
+                <a href="#">Instagram</a>
+            </div>
+            <div class="text-center">Copyright &copy;2022 Big Burger Restaurant</div>
+        </div>
+    </footer>
 <script src="restaurant.js"></script>
 </body>
 </html>
