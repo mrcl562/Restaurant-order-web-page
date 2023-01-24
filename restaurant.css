@@ -4,6 +4,8 @@
     --display_background: rgb(61, 53, 61);
 }
 
+html { scroll-behavior: smooth;}
+
 *{
     margin: 0;
     padding: 0;
@@ -15,7 +17,7 @@ body{
 
 #navbar{
     width: 100%;
-    height: 50px;
+    height: 45px;
     display: grid;
     position: fixed;
     background-color: var(--navbar_color);
@@ -26,6 +28,7 @@ body{
 }
 
 .logo{
+    padding: 0 5%;
     display: flex;
     align-content: center;
     align-items: center;
@@ -33,7 +36,8 @@ body{
 }
 
 .logo img{
-    height: inherit;
+    height: 100%;
+
 }
 
 .navigation_options{
@@ -66,7 +70,7 @@ body{
     width: 100%;
 }
 
-.Background{
+.background{
     width: 100%;
     height: 100vh;
     background-size: cover;
@@ -80,7 +84,7 @@ body{
     align-content: center;
 }
 
-.Background span{
+.background span{
     z-index: 1;
     color: aliceblue;
     font-size: 10vw;
@@ -99,12 +103,16 @@ body{
 }
 
 .order_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 10vh;
     width: 15vw;
     font-size: 3vh;
     border: 1px solid white;
     border-radius: 10vw;
     color: white;
+    text-decoration: none;
     background-color: transparent;
     z-index: 1;
 }
@@ -119,6 +127,9 @@ body{
     padding: 2vw;
 }
 
+input{
+    width: 60%;
+}
 .menu_item{
     color: aliceblue;
     display: flex;
@@ -146,7 +157,7 @@ body{
 .order_display{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 5fr 1fr 1fr 2fr;
+    grid-template-rows: repeat(3, 1fr) 4fr 1fr 1fr 2fr 1fr;
     border-radius: 2vw;
     background-color: var(--display_background);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -156,7 +167,7 @@ body{
     font-size: large;
     color: white;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     padding: 0 5%;
 }
@@ -189,8 +200,8 @@ body{
     flex-direction: column;
     gap: 1vh;
     align-items: center;
-    padding: 5% 5%;
-    overflow: auto;
+    justify-content: start;
+    overflow: scroll;
     -ms-overflow-style: none; 
     scrollbar-width: none;
     overflow-y: scroll; 
@@ -215,6 +226,18 @@ body{
 }
 .total{
     justify-content: space-between;
+}
+
+.submit_order{
+    margin: 1vh 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 1vw;
+    color: white;
+    background-color: rgb(206, 10, 10);
 }
 
 .locations_wrapper{
@@ -247,13 +270,72 @@ body{
     overflow: hidden;
     background-size: cover;
     align-items: center;
+    justify-content: space-around;
     color: white;
     font-size: 4vh;
 }
 
-.location_description:hover{
+.location > .location_image{
+    height: 90%;
+}
+.location .location_image img{
     height: 100%;
-    z-index: 1;
+    width: 100%;
+}
+.location_description{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.about_us_wrapper{
+    padding: 5vw;
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: aliceblue;
+    font-size: 5vh;
+    gap: 2vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.footer_wrapper{
+    height: 30vh;
+    width: 100%;
+    outline: 1px solid white;
+    overflow: hidden;
+    color: white;
 }
 
+footer{
+    padding: 20px 0;
+}
+.footer_container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+}
+footer h4 {
+    color: white;
+    font-size: 3vh;
+    margin-bottom: 20px;
+}
+footer a {
+    color: white;
+    margin-right: 15px;
+}
+footer .text-center {
+    grid-column: 1 / 4;
+    margin-top: 20px;
+    color: white;
+}
 
+.footer_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+  
