@@ -16,6 +16,8 @@ menu_item.forEach(item => {
     item.addEventListener("click",(ev) =>{ 
         if(ev.target.parentElement.classList.contains("menu_item")){
             item_quantitys(ev.target.parentElement.classList.value.split(" ").pop(0,1));
+        }else if(ev.target.classList.contains("menu_item")){
+            item_quantitys(ev.target.classList.value.split(" ").pop(0,1));
         }
     })
 })
