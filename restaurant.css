@@ -14,7 +14,7 @@ html {
 body{
     background-color: var(--background_color);
     display: grid;
-    grid-template-rows: repeat(auto, 100vh);
+    grid-template-rows: repeat(3, 100vh) 70vh;
     overflow-x: hidden;
 }
 
@@ -25,57 +25,53 @@ body{
     position: fixed;
     background-color: var(--navbar_color);
     color: white;
-    grid-template-columns: 1fr 1fr;
-    margin-bottom: 0;
+    grid-template-columns: repeat(auto, 1fr);
     z-index: 10;
 }
 
-.logo{
-    padding: 0 5%;
+.nav_bar_logo{
+    grid-column: 1 / span 1;
     display: flex;
     align-content: center;
     align-items: center;
-    height: 40px;
+    justify-content: center;
+    height: inherit;
 }
 
-.logo img{
+.nav_bar_logo img{
     height: 100%;
 
 }
 
 .navigation_options{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-items: center;
+    grid-column: 6 / span 4;
+    display: inline-flex;
+    justify-content: space-around;
     align-items: center;
 }
 
 .navigation_options *{
-    font-style: italic;
-    color: aliceblue;
-    text-decoration: none;
     height: 100%;
     width: 100%;
-}
-
-.option{
-    width: 100%;
-    height: 100%;
-    transition: 1s ;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-style: italic;
+    color: aliceblue;
+    text-decoration: none;
+    transition: 1s ;
     cursor: pointer;
 }
 
 .option:hover{
     background-color: gray;
+}
+.page_section{
     width: 100%;
+    padding: 65px 20px 20px 20px;
 }
 
 .background{
-    width: 100%;
-    height: 100vh;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -121,13 +117,10 @@ body{
 }
 
 .order_wrapper{
-    max-width: 95%;
-    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-auto-rows: 1fr;
+    grid-template-rows: repeat(6, 1fr);
     gap: 1vw 3vw;
-    padding: 2vw;
 }
 
 input{
@@ -162,7 +155,6 @@ input{
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr) 4fr 1fr 1fr 2fr 1fr;
     border-radius: 2vw;
-    background-color: var(--display_background);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     grid-area: 1 / 4 / span 6 / span 2;
 }
@@ -173,6 +165,7 @@ input{
     justify-content: space-between;
     align-items: center;
     padding: 0 5%;
+    background-color: var(--display_background);
 }
 .order_tittle{
     color: aliceblue;
@@ -183,7 +176,8 @@ input{
 }
 
 .text{
-    color: black;
+    color: white;
+    padding: 0;
 }
 
 .aditional_notes{
@@ -218,10 +212,12 @@ input{
     display: grid;
     grid-template-columns: 10% 80% 10%;
     border-radius: 1vw;
+    background-color: transparent;
     background-image: linear-gradient(rgb(51, 51, 51), rgb(74, 73, 73));
 }
 
 .order_item > *{
+    background-color: transparent;
     display: flex;
     height: 100%;
     align-items: center;
@@ -244,10 +240,12 @@ input{
 }
 
 .locations_wrapper{
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vh 2vw
 }
 .locations_tittle{
-    width: 100%;
+    grid-column: 1 / span 3;
     display: flex;
     color: white;
     justify-content: center;
@@ -256,17 +254,7 @@ input{
     font-weight: lighter;
 }
 
-.locations_display{
-    width: 100%;
-    height: 90vh;
-    margin: 0;
-    padding: 10vh;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3vw;
-}
 .location{
-    padding: 1vh;
     background-color: var(--display_background);
     display: flex;
     flex-direction: column;
@@ -280,6 +268,7 @@ input{
 
 .location > .location_image{
     height: 90%;
+    width: 100%;
 }
 .location .location_image img{
     height: 100%;
